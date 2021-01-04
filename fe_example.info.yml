@@ -1,0 +1,6 @@
+name: FE Example Custom Block
+description: Creates a custom block with a template, styles and js.
+package: Custom
+type: module
+version: 1.0
+core: 8.x

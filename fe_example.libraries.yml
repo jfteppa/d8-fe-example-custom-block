@@ -1,0 +1,12 @@
+fe-example:
+  version: 1.x
+  css:
+    theme:
+      css/fe-example.css: {}
+  js:
+    js/fe-example.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery
+    - core/jquery.once

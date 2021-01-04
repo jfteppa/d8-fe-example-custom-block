@@ -1,0 +1,33 @@
+{#
+/**
+ * @file
+ * Default theme implementation to render FE Example Custom Block.
+ *
+ * Available variables:
+ *   - tasks
+ *   - alter_task
+ *
+ * @see template_preprocess_fe_example()
+ *
+ * @ingroup themeable
+ */
+#}
+<div id="fe_example" class="tasks_block">
+  <div class="tasks_actions">
+    <input type="text" class="new-task" id="new_task">
+    <button class="btn btn-add" id="add_task">{{ 'Add Task'|t }}</button>
+  </div>
+  <ul id="tasks_list">
+    {% for task in tasks %}
+      <li class="task_item {{ task.status }}">
+        <input class="task_status" type="checkbox" {{ task.status == 'done' ? 'checked' : '' }}>
+        <span class="task_title">{{ task.title }}</span>
+        <button class="btn btn-delete" id="delete_task">{{ 'delete'|t }}</button>
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="default_actions">
+    <button class="btn" id="reset_tasks">{{ 'reset default tasks'|t }}</button>
+    <button class="btn" id="toggle_completed">{{ 'toggle completed tasks'|t }}</button>
+  </div>
+</div>

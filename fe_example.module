@@ -1,0 +1,32 @@
+<?php
+
+/**
+ * Implements hook_theme().
+ */
+function fe_example_theme($existing, $type, $theme, $path) {
+  $variables = [
+    'fe_example' => [
+      'variables' => [
+        'tasks' => NULL,
+      ],
+      'template' => 'fe_example',
+    ],
+  ];
+  return $variables;
+}
+
+/**
+ * Template preprocess function for FE Example Custom Block.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - tasks
+ */
+function template_preprocess_fe_example(&$variables) {
+  $alter_task = [
+    'title' => 'Alter Task - 4 from template preprocess',
+    'status' => 'to-do'
+  ];
+  $variables['tasks'][] = $alter_task;
+  $variables['#attached']['drupalSettings']['fe_example']['alter_tasks'][] = $alter_task;
+}
